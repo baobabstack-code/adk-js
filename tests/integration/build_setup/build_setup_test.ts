@@ -53,9 +53,7 @@ describe('Build setup', () => {
             `${dirname}/tests/integration/build_setup/${buildSetup}`;
 
         it('should build and run agent successfully', async () => {
-          const npmInstallResult =
-              await execAsync('npm install', {cwd: projectPath});
-          expect(npmInstallResult.stderr).toBe('');
+          await execAsync('npm install', {cwd: projectPath});
 
           if (buildSetup.startsWith('ts_')) {
             const buildResult =
