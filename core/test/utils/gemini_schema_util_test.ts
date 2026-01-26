@@ -148,7 +148,7 @@ describe("toGeminiSchema", () => {
 		const schema = toGeminiSchema(input as any);
 
 		// For empty items schema, items type becomes TYPE_UNSPECIFIED
-		expect(schema).toMatchObject({
+		expect(schema).toEqual({
 			type: Type.ARRAY,
 			items: { type: Type.TYPE_UNSPECIFIED },
 		});
